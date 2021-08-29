@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 const BlogPost = ({ data }) => {
   const { title, body, image, tags } = data.contentfulBlogPost;
+  const tagsArray = tags.split(' ');
   return (
     <Layout>
       <SEO title={title} />
@@ -11,7 +12,7 @@ const BlogPost = ({ data }) => {
         <h1>{title}</h1>
         <img alt={title} src={image.file.url} />
         <div className="tags">
-          {tags.map(tag => (
+          {tagsArray.map(tag => (
             <span className="tag" key={tag}>
               {tag}
             </span>
