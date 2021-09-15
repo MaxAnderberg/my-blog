@@ -1,23 +1,11 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import Nav from './Nav';
 
-const Header = ({ siteTitle }) => (
-  <header
-  class="mb-5 bg-purple-500"
-  >
-    <div
-      class="py-5 px-10 m-auto max-w-4xl	"
-    >
-      <h1 class="m-0">
-        <Link
-          to="/"
-          class="text-black"
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+const Header = () => (
+  <header class="mb-5 bg-gray-800">
+      <Nav />
   </header>
 )
 
