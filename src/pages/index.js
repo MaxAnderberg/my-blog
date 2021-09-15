@@ -1,33 +1,45 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Post from '../components/Post';
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const IndexPage = () => {
-
+const IndexPage = ({ data }) => {
+  const blogPosts = data.allContentfulBlogPost.edges;
+  console.log(blogPosts);
   return (
     <Layout>
-      <Seo title="Home" keywords={['gatsby', 'blog', 'react']}/>
-      <h1>Hi</h1>
-      <p>
-        <Link to="/blogposts">View all posts</Link> <br />
-      </p>
+      <SEO title="Blog posts" />
+      <h1 class="text-3xl text-gray-700 font-semibold	pb-20">Here's a list of all blogposts</h1>
+      <div class="grid lg:grid-cols-2 md:grid md:grid-cols-1">
+        {blogPosts.map(({ node }) => (
+            <Post key={node.id} props={node}/>
+        ))}
+        <span className="mgBtm__24" />
+      </div>
     </Layout>
-  )
+  );
+};
+export default IndexPage;
+export const query = graphql`
+  query BlogPostsPageQuery {
+    allContentfulBlogPost {
+    edges {
+      node {
+        body {
+          raw
+        }
+        id
+        slug
+        title
+        publishedDate(formatString: "YYYY-MM-DD")
+        image {
+          fluid {
+            src
+          }
+        }
+      }
+    }
+  }
 }
-
-export default IndexPage
-
-
-// export const query = graphql`
-//   query BlogPostsPageQuery {
-//   allContentfulBlogPost {
-//     edges {
-//       node {
-//         publishedDate
-//       }
-//     }
-//   }
-// }
-// `;
+`;

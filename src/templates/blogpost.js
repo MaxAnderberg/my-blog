@@ -20,7 +20,7 @@ const BlogPost = ({ data }) => {
         <img alt={title} src={image.file.url} />
         </section>
         <section class="flex justify-center items-center">
-          <section>
+          <section class="font-bold text-lg">
             {renderRichText(body)}
           </section>
         </section>
