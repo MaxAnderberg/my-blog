@@ -2,26 +2,32 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+
 const BlogPost = ({ data }) => {
+  
   const { title, body, image } = data.contentfulBlogPost;
-  // const tagsArray = tags.split(' ');
+  console.log(renderRichText(body))
+
   return (
     <Layout>
       <SEO title={title} />
-      <div className="blogpost">
-        <h1>{title}</h1>
+      <article className="blogpost">
+        <section class="grid grid-cols-2">
+          <section class="flex flex-col justify-center	items-center">
+            <h1 class="text-red-200 font-bold text-4xl">{title}</h1>
+          </section>
         <img alt={title} src={image.file.url} />
-        <div className="tags">
-          {/* {tagsArray.map(tag => (
-            <span className="tag" key={tag}>
-              {tag}
-            </span>
-          ))} */}
-        </div>
+        </section>
+        <section class="flex justify-center items-center">
+          <section>
+            {renderRichText(body)}
+          </section>
+        </section>
         <p className="body-text">{body.body}</p>
         <Link to="/blogposts">View more posts</Link>
         <Link to="/">Back to Home</Link>
-      </div>
+      </article>
     </Layout>
   );
 };
@@ -29,19 +35,18 @@ const BlogPost = ({ data }) => {
 export default BlogPost;
 
 export const pageQuery = graphql`
-    query($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
+    query($id: String!) {
+    contentfulBlogPost(id: { eq: $id }) {
       title
       publishedDate(formatString: "Do MMMM, YYYY")
       image {
         file {
-            url
-          }
+          url
+        }
       }
       body {
         raw
-      }
+    }
     }
   }
-
 `;
