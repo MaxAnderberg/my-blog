@@ -12,6 +12,7 @@
     "gatsby-plugin-manifest": "^3.12.0",
     "gatsby-plugin-offline": "^4.12.0",
     "gatsby-plugin-react-helmet": "^4.12.0",
+    "gatsby-plugin-sass": "^4.13.0",
     "gatsby-plugin-sharp": "^3.12.0",
     "gatsby-source-contentful": "^5.12.0",
     "gatsby-source-filesystem": "^3.12.0",
@@ -23,6 +24,9 @@
     "tailwindcss": "^2.2.11"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "gatsby-plugin-postcss": "^4.13.0",
+    "postcss": "^8.3.6",
     "prettier": "2.3.2"
   },
   "keywords": [
