@@ -23,23 +23,22 @@ const BlogPosts = ({ data }) => {
 export default BlogPosts;
 export const query = graphql`
   query BlogPostsPageQuery {
-    allContentfulBlogPost(limit: 1000) {
-      edges {
-        node {
-          id
-          title
-          slug
-          body {
-            body
+    allContentfulBlogPost {
+    edges {
+      node {
+        body {
+          raw
+        }
+        id
+        slug
+        title
+        image {
+          fluid {
+            src
           }
-          image {
-            file {
-              url
-            }
-          }
-          tags
         }
       }
     }
   }
+}
 `;

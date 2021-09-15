@@ -3,8 +3,8 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 const BlogPost = ({ data }) => {
-  const { title, body, image, tags } = data.contentfulBlogPost;
-  const tagsArray = tags.split(' ');
+  const { title, body, image } = data.contentfulBlogPost;
+  // const tagsArray = tags.split(' ');
   return (
     <Layout>
       <SEO title={title} />
@@ -12,11 +12,11 @@ const BlogPost = ({ data }) => {
         <h1>{title}</h1>
         <img alt={title} src={image.file.url} />
         <div className="tags">
-          {tagsArray.map(tag => (
+          {/* {tagsArray.map(tag => (
             <span className="tag" key={tag}>
               {tag}
             </span>
-          ))}
+          ))} */}
         </div>
         <p className="body-text">{body.body}</p>
         <Link to="/blogposts">View more posts</Link>
@@ -29,19 +29,19 @@ const BlogPost = ({ data }) => {
 export default BlogPost;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+    query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-      slug
-      body {
-        body
-      }
+      publishedDate(formatString: "Do MMMM, YYYY")
       image {
         file {
-          url
-        }
+            url
+          }
       }
-      tags
+      body {
+        raw
+      }
     }
   }
+
 `;
