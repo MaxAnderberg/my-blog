@@ -10,13 +10,13 @@ const BlogPosts = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog posts" />
-      <h1>{"Here's a list of all blogposts!"}</h1>
-      <div className="blogposts">
+      <h1 class="text-3xl text-gray-700 font-semibold	pb-20">Here's a list of all blogposts</h1>
+      {/* <Link to="/">Go back to the homepage</Link> */}
+      <div class="grid grid-cols-2">
         {blogPosts.map(({ node }) => (
             <Post key={node.id} props={node}/>
         ))}
         <span className="mgBtm__24" />
-        <Link to="/">Go back to the homepage</Link>
       </div>
     </Layout>
   );
