@@ -11,12 +11,14 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section class="flex flex-row space-x-96 pt-10 pb-10 border-b-2 mb-10">
+      <section class="grid grid-cols-2 pt-10 pb-10 border-b-2 mb-10">
         <section class="flex-grow">
           <h1 class="text-3xl text-gray-700 font-semibold">Max Anderberg</h1>
           <p>Welcome to my rudimentary blog. Mainly write about code stuff.</p>
         </section>
-        <StaticImage class="w-3/12 flex-grow-0" src="../images/profile_image.png" alt="The man himself!" />
+        <section class="flex justify-end">
+          <StaticImage class="w-3/12" src="../images/profile_image.png" alt="The man himself!" />
+        </section>
       </section >
       <div class="grid gap-20 lg:grid-cols-2 md:grid md:grid-cols-1">
         {blogPosts.map(({ node }) => (
