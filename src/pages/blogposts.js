@@ -11,8 +11,7 @@ const BlogPosts = ({ data }) => {
     <Layout>
       <SEO title="Blog posts" />
       <h1 class="text-3xl text-gray-700 font-semibold	pb-20">Here's a list of all blogposts</h1>
-      {/* <Link to="/">Go back to the homepage</Link> */}
-      <div class="grid grid-cols-2">
+      <div class="grid lg:grid-cols-2 md:grid md:grid-cols-1">
         {blogPosts.map(({ node }) => (
             <Post key={node.id} props={node}/>
         ))}
