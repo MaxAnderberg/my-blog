@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   class="mb-5 bg-purple-500"
   >
     <div
-      class="py-2 px-2 m-auto max-w-4xl	"
+      class="py-5 px-10 m-auto max-w-4xl	"
     >
       <h1 class="m-0">
         <Link
