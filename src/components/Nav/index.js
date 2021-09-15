@@ -5,7 +5,7 @@ const index = () => {
   const active = "blue";
   return (
     <nav class="flex flex-row text-left pt-5 pb-1 px-6 bg-white shadow" >
-      <section>
+      <section class="ml-5 mr-20 font-bold text-xl">
         &lt;max/&gt;
       </section>
       <section>
