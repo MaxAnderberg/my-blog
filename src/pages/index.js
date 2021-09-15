@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Post from '../components/Post';
@@ -9,9 +10,15 @@ const IndexPage = ({ data }) => {
   console.log(blogPosts);
   return (
     <Layout>
-      <SEO title="Blog posts" />
-      <h1 class="text-3xl text-gray-700 font-semibold	pb-20">Here's a list of all blogposts</h1>
-      <div class="grid lg:grid-cols-2 md:grid md:grid-cols-1">
+      <SEO title="Home" />
+      <section class="flex flex-row space-x-96 pt-10 pb-10 border-b-2 mb-10">
+        <section>
+          <h1 class="text-3xl text-gray-700 font-semibold">Max Anderberg</h1>
+          <p>Welcome to my rudimentary blog. Mainly write about code stuff.</p>
+        </section>
+        <StaticImage class="w-3/12" src="../images/profile_image.png" alt="The man himself!" />
+      </section>
+      <div class="grid gap-20 lg:grid-cols-2 md:grid md:grid-cols-1">
         {blogPosts.map(({ node }) => (
             <Post key={node.id} props={node}/>
         ))}
