@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 const BlogPosts = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges;
+  console.log(data)
   return (
     <Layout>
       <SEO title="Blog posts" />
@@ -32,6 +33,7 @@ export const query = graphql`
         id
         slug
         title
+        publishedDate(formatString: "YYYY-MM-DD")
         image {
           fluid {
             src
