@@ -6,7 +6,7 @@ const index = () => {
   return (
     <nav class="flex flex-row text-left pt-5 pb-1 px-6 bg-white shadow" >
       <section class="ml-5 mr-20 font-bold text-xl">
-        &lt;max/&gt;
+        <Link to='/'>&lt;max/&gt;</Link>
       </section>
       <section>
         <Link
@@ -16,7 +16,6 @@ const index = () => {
         </Link>
         <Link class="text-lg font-semibold mr-1 no-underline text-grey-darkest hover:underline " to="/about">About</Link>
       </section>
-
     </nav>
   )
 }
