@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `An awesome blog`,
+    title: `Blogger`,
     description: `Make sure to bookmark this awesome blog!`,
     author: `Max Anderberg`,
   },
