@@ -17,7 +17,7 @@ const BlogPost = ({ data }) => {
   const H4 = ({ children }) => <h4 class='text-blue-500'>{children}</h4>
   const Ul = ({ children }) => <ul class='list-disc'>{children}</ul>
   const Ol = ({ children }) => <ol class='list-decimal'>{children}</ol>
-  const BlockQuote = ({ children }) => <blockquote class='border-gray-300	border-l-8 bg-gray-100 p-3 w-auto inline-block'>{children}</blockquote>
+  const BlockQuote = ({ children }) => <blockquote class='border-gray-300 rounded-r	border-l-8 bg-gray-100 p-3 w-auto inline-block'>{children}</blockquote>
 
 const options = {
   renderMark: {
