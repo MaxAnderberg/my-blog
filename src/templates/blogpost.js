@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { renderRichText } from "gatsby-source-contentful/rich-text"; 
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { CopyBlock, dracula } from "react-code-blocks";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 
 const BlogPost = ({ data }) => {
@@ -26,7 +26,7 @@ const options = {
         language='javascript'
         showLineNumbers={true}
         startingLineNumber={1}
-        theme={dracula}
+        theme={atomOneDark}
         codeBlock
       />,
 
