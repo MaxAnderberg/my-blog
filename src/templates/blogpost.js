@@ -3,24 +3,32 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { renderRichText } from "gatsby-source-contentful/rich-text"; 
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { CopyBlock, dracula } from "react-code-blocks";
+
 
 const BlogPost = ({ data }) => {
-  const Code = ({ children }) => <code class='text-purple-300 font-mono'>{children}</code>
 
-  const Text = ({ children }) => <p>{children}</p>
-  const H1 = ({ children }) => <h1 class='text-blue-500'>{children}</h1>
+
+  const Text = ({ children }) => <p class='text-base my-5 leading-relaxed'>{children}</p>
+  const H1 = ({ children }) => <h1 class='text-4xl font-bold'>{children}</h1>
   const H2 = ({ children }) => <h2 class='text-green-500'>{children}</h2>
   const H3 = ({ children }) => <h3 class='text-red-500'>{children}</h3>
   const H4 = ({ children }) => <h4 class='text-blue-500'>{children}</h4>
   const Ul = ({ children }) => <ul class='list-disc'>{children}</ul>
   const Ol = ({ children }) => <ol class='list-decimal'>{children}</ol>
-  
-  // list-disc
+  const BlockQuote = ({ children }) => <blockquote class='border-gray-300	border-l-8 bg-gray-100 p-3 w-auto inline-block'>{children}</blockquote>
 
 const options = {
   renderMark: {
-    [MARKS.CODE]: text => <Code>{text}</Code>,
+    [MARKS.CODE]: text => <CopyBlock
+        text={text}
+        language='javascript'
+        showLineNumbers={true}
+        startingLineNumber={1}
+        theme={dracula}
+        codeBlock
+      />,
 
   },
   renderNode: {
@@ -30,6 +38,7 @@ const options = {
     [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
     [BLOCKS.UL_LIST]: (node, children) => <Ul>{children}</Ul>,
     [BLOCKS.OL_LIST]: (node, children) => <Ol>{children}</Ol>,
+    [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
     [BLOCKS.EMBEDDED_ASSET]: node => {
       return (
         <>
@@ -45,7 +54,6 @@ const options = {
 
   const { title, body, image } = data.contentfulBlogPost;
   console.log('lol', renderRichText(body))
-  // console.log(documentToReactComponents(renderRichText(body)))
 
   return (
     <Layout>
@@ -55,7 +63,7 @@ const options = {
         <img alt={title} class='pr-20' src={image.file.url} />
 
           <section class="flex flex-col justify-center	items-left">
-            <h1 class="text-red-200 font-bold text-4xl">{title}</h1>
+            <h1 class="font-bold text-4xl py-5">{title}</h1>
           </section>
         </section>
         <section class="flex ">
