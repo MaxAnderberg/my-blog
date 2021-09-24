@@ -5,7 +5,7 @@ import './Nav.css';
 const index = () => {
   
   return (
-    <nav class="text-left pr-5 pt-5 pl-5 mx-32">
+    <nav class="text-left pr-5 pt-5 pl-5 md:mx-32">
       <section class="font-bold text-2xl mb-8 ">
         <Link to='/'>&lt;max/&gt;</Link>
       </section>
