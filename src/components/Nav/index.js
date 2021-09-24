@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import './Nav.css';
 
 const index = () => {
-  
+  const active = `font-extrabold`
   return (
     <nav class="text-left pr-5 pt-5 pl-5 xl:mx-32">
       <section class="font-bold text-2xl mb-8 ">
@@ -12,10 +12,12 @@ const index = () => {
       <section class='uppercase'>
         <Link
         className="text-md font-semibold mr-1 no-underline text-grey-darkest hover:underline pr-2"
+        activeClassName={active}
         to="/">
           Home
         </Link>
-        <Link className="text-md font-semibold mr-1 no-underline text-grey-darkest hover:underline px-2" 
+        <Link className="text-md font-semibold mr-1 no-underline text-grey-darkest hover:underline px-2"
+        activeClassName={active}
         to="/about">About</Link>
       </section>
     </nav>
