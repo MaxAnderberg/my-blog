@@ -15,10 +15,11 @@ const BlogPost = ({ data }) => {
   const H2 = ({ children }) => <h2 class='text-green-500'>{children}</h2>
   const H3 = ({ children }) => <h3 class='text-red-500'>{children}</h3>
   const H4 = ({ children }) => <h4 class='text-blue-500'>{children}</h4>
-  const Ul = ({ children }) => <ul class='list-disc'>{children}</ul>
-  const Ol = ({ children }) => <ol class='list-decimal'>{children}</ol>
+  const Ul = ({ children }) => <ul >{children}</ul>
+  const Ol = ({ children }) => <ol class='list-roman'>{children}</ol>
   const BlockQuote = ({ children }) => <blockquote class='border-gray-300 rounded-r	border-l-8 bg-gray-100 p-3 w-auto inline-block'>{children}</blockquote>
   const Img = ({ children }) => <img src={children}></img>
+  const Li = ({ children }) => <li class='text-green-600'>{children}</li>
 
 const options = {
   renderMark: {
@@ -37,19 +38,32 @@ const options = {
     [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
     [BLOCKS.HEADING_2]: (node, children) => <H2>{children}</H2>,
     [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
-    [BLOCKS.UL_LIST]: (node, children) => <Ul>{children}</Ul>,
-    [BLOCKS.OL_LIST]: (node, children) => <Ol>{children}</Ol>,
+    [BLOCKS.LIST_ITEM]: (node, children) => {
+      console.log(node)
+      return (<li class='text-color-orange-600'>{node.content[0].content[0].value}</li>)
+    },
+    [BLOCKS.UL_LIST]: (node, children) => <Ul className='list-roman list-inside'>{children}</Ul>,
+
+    // [BLOCKS.OL_LIST]: (node, children) => {
+    //   // console.log(node)
+    //   return(
+    //     <Ol>
+    //       {children}
+    //     </Ol>
+    //   )
+    // },
     [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       return (
         <img src={node.data.target.fixed.src}/>
       );
     },
+
   },
 }
 
   const { title, body, image } = data.contentfulBlogPost;
-
+  console.log(renderRichText(body))
   return (
     <Layout>
       <SEO title={title} />
