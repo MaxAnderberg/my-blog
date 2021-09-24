@@ -18,6 +18,7 @@ const BlogPost = ({ data }) => {
   const Ul = ({ children }) => <ul class='list-disc'>{children}</ul>
   const Ol = ({ children }) => <ol class='list-decimal'>{children}</ol>
   const BlockQuote = ({ children }) => <blockquote class='border-gray-300 rounded-r	border-l-8 bg-gray-100 p-3 w-auto inline-block'>{children}</blockquote>
+  const Img = ({ children }) => <img src={children}></img>
 
 const options = {
   renderMark: {
@@ -29,8 +30,8 @@ const options = {
         theme={atomOneDark}
         codeBlock
       />,
-
   },
+
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
@@ -39,21 +40,15 @@ const options = {
     [BLOCKS.UL_LIST]: (node, children) => <Ul>{children}</Ul>,
     [BLOCKS.OL_LIST]: (node, children) => <Ol>{children}</Ol>,
     [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
-    [BLOCKS.EMBEDDED_ASSET]: node => {
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       return (
-        <>
-          <h2>Embedded Asset</h2>
-          <pre>
-            <code>{JSON.stringify(node, null, 2)}</code>
-          </pre>
-        </>
-      )
+        <img src={node.data.target.fixed.src}/>
+      );
     },
   },
 }
 
   const { title, body, image } = data.contentfulBlogPost;
-  console.log('lol', renderRichText(body))
 
   return (
     <Layout>
@@ -93,7 +88,19 @@ export const pageQuery = graphql`
       }
       body {
         raw
-    }
+        references {
+          ... on ContentfulAsset {
+            __typename
+            contentful_id
+            fixed(width: 600){
+              width
+              height
+              src
+              srcSet
+            }
+          }
+        }
+      }
     }
   }
 `;
