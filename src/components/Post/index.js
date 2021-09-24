@@ -3,10 +3,9 @@ import { Link } from "gatsby";
 import '../../global-styles/global.css';
 
 const post = ({props}) => {
-  console.log(props)
   return (
     <div class="max-w-sm px-1 rounded overflow-hidden">
-      <img class="w-full h-56 rounded-lg" src={props.image.fluid.src}/>
+      <img class="w-full h-44 md:h-56 rounded-lg" src={props.image.fluid.src}/>
       <section class="mb-5">
         <h3 class="font-bold text-xl mb-2">{props.title}</h3>
         <p class="text-gray-700 text-base">

@@ -7,7 +7,7 @@ import Post from '../components/Post';
 
 const IndexPage = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges;
-  console.log(blogPosts);
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
           <StaticImage class="w-3/12 md:w-32" src="../images/profile_image.png" alt="The man himself!" />
         </section>
       </section >
-      <div class="grid gap-20 lg:grid-cols-2 md:grid md:grid-cols-1">
+      <div class="grid gap-20 md:grid-cols-2 grid-cols-1">
         {blogPosts.map(({ node }) => (
             <Post key={node.id} props={node}/>
         ))}
