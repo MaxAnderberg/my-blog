@@ -72,7 +72,7 @@ const options = {
         <img alt={title} width='700' class='' src={image.file.url} />
           <section class="flex flex-col justify-center	items-left">
             <h1 class="font-bold text-4xl py-5">{title}</h1>
-            <p class='text-xl text-gray-600 font-semibold'>{excerpt.excerpt}</p>
+            <p class='text-xl text-gray-600 font-semibold mb-6'>{excerpt.excerpt}</p>
           </section>
           <section class='flex border-t border-b py-5 mb-4'>
             <p class='text-gray-500 mr-1 text-sm'>Published on</p>
