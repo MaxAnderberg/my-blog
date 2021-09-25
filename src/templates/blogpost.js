@@ -68,9 +68,8 @@ const options = {
     <Layout>
       <SEO title={title} />
       <article class='px-9'>
-        <section class="">
-        <img alt={title} class='pr-20' src={image.file.url} />
-
+        <section>
+        <img alt={title} width='700' class='' src={image.file.url} />
           <section class="flex flex-col justify-center	items-left">
             <h1 class="font-bold text-4xl py-5">{title}</h1>
           </section>
