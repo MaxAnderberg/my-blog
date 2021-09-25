@@ -7,7 +7,7 @@ import Post from '../components/Post';
 
 const IndexPage = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges;
-
+  console.log(blogPosts)
   return (
     <Layout>
       <SEO title="Home" />
