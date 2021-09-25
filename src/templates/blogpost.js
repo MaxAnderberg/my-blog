@@ -62,7 +62,7 @@ const options = {
   },
 }
 
-  const { title, body, image } = data.contentfulBlogPost;
+  const { title, body, image, publishedDate } = data.contentfulBlogPost;
   console.log(renderRichText(body))
   return (
     <Layout>
@@ -72,6 +72,10 @@ const options = {
         <img alt={title} width='700' class='' src={image.file.url} />
           <section class="flex flex-col justify-center	items-left">
             <h1 class="font-bold text-4xl py-5">{title}</h1>
+          </section>
+          <section class='flex border-t border-b py-5 mb-4'>
+            <p class='text-gray-500 mr-1 text-sm'>Published on</p>
+            <p class='text-gray-600 text-sm font-semibold'>{publishedDate}</p>
           </section>
         </section>
         <section class="flex ">
@@ -93,7 +97,7 @@ export const pageQuery = graphql`
     query($id: String!) {
     contentfulBlogPost(id: { eq: $id }) {
       title
-      publishedDate(formatString: "Do MMMM, YYYY")
+      publishedDate(formatString: "MMM Do, YYYY")
       image {
         file {
           url
