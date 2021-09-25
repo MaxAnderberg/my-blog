@@ -13,7 +13,7 @@ const post = ({props}) => {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
         </p>
         <p class="mt-2">
-          <Link class="inline-block bg-gray-200 hover:shadow-lg rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"to={`/blogpost/${props.slug}`}>Read more 👈</Link>
+          <Link class="inline-block bg-gray-200 hover:shadow-lg rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 transition duration-250 ease-in"to={`/blogpost/${props.slug}`}>Read more 👈</Link>
         </p>
       </section>
     </div>
