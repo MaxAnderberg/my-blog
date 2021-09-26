@@ -18,6 +18,7 @@ const post = ({props}) => {
               whileHover={{
                 scale: 1.1,
                 originX:0,
+                boxShadow: "10px 10px 0 rgba(0, 0, 0, 0.2)",
                 transition: { duration: 0.2 },
               }}
             class="inline-block bg-gray-200 rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
