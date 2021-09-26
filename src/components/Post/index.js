@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "gatsby";
 import '../../global-styles/global.css';
+import { motion } from 'framer-motion';
 
 const post = ({props}) => {
   return (
@@ -12,9 +13,17 @@ const post = ({props}) => {
         <p class="text-gray-700 text-base">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
         </p>
-        <p class="mt-2">
-          <Link class="inline-block bg-gray-200 hover:shadow-lg rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 transition duration-250 ease-in"to={`/blogpost/${props.slug}`}>Read more 👈</Link>
-        </p>
+          <Link to={`/blogpost/${props.slug}`}>
+            <motion.button 
+              whileHover={{
+                scale: 1.1,
+                originX:0,
+                transition: { duration: 0.2 },
+              }}
+            class="inline-block bg-gray-200 rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              Read more 👈
+            </motion.button>
+          </Link>
       </section>
     </div>
   )
