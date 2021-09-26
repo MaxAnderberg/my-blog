@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "gatsby";
 import './Nav.css';
+import { motion } from 'framer-motion';
 
 const index = () => {
   const active = `font-extrabold text-base`
@@ -15,11 +16,24 @@ const index = () => {
           activeClassName={active}
           to="/"
         >
-          Home
+          <motion.p class='inline-block' 
+          whileHover={{translateY:-2, color:'blue'}}
+          transition={{ type:'spring', stiffness:500 }}
+          >
+            Home
+          </motion.p>
         </Link>
-        <Link className="text-sm font-semibold mr-1 no-underline text-grey-darkest hover:underline px-2"
+        <Link className="text-sm font-semibold mr-1 no-underline text-grey-darkest px-2 hover:underline"
         activeClassName={active}
-        to="/about">About</Link>
+        to="/about">
+          <motion.p class='inline-block' 
+          whileHover={{translateY:-2, color:'blue'}}
+          transition={{ type:'spring', stiffness:500}}
+          default={{duration:2}}
+          >
+            About
+          </motion.p>
+        </Link>
       </section>
     </nav>
   )
