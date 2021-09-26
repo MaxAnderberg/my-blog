@@ -12,7 +12,7 @@ const index = () => {
       </section>
       <section class='uppercase'>
         <Link
-          className="text-sm font-semibold mr-1 no-underline text-grey-darkest hover:underline pr-2"
+          className="text-sm font-semibold mr-1 no-underline text-grey-darkest pr-2"
           activeClassName={active}
           to="/"
         >
@@ -23,7 +23,7 @@ const index = () => {
             Home
           </motion.p>
         </Link>
-        <Link className="text-sm font-semibold mr-1 no-underline text-grey-darkest px-2 hover:underline"
+        <Link className="text-sm font-semibold mr-1 no-underline text-grey-darkest px-2 "
         activeClassName={active}
         to="/about">
           <motion.p class='inline-block' 
