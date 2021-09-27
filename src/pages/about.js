@@ -8,11 +8,10 @@ const about = () => {
       <Seo title="About" />
       <h1>Hi there!</h1>
       <p>
-        Some text to go there
+        Intro to me 
       </p>
-      <h1></h1>
-      <h1>About</h1>
-      <h1>About</h1>
+      <h1>What this blog is</h1>
+      <h1>Stack I used to build it</h1>
   </Layout>
   )
 }
