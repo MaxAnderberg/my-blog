@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
           <h1 class="text-2xl md:text-3xl text-gray-700 font-bold mb-1">Max Anderberg</h1>
           <p>Welcome to my rudimentary blog. Mainly write about code stuff.</p>
         </section>
-        <section class="text-left md:col-start-2 row-start-1 mb-5">
+        <section class="md:col-start-2 row-start-1 mb-5">
           <StaticImage class="w-3/12 md:w-32" src="../images/profile_image.png" alt="The man himself!" />
         </section>
       </section >
