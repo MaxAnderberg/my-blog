@@ -36,7 +36,7 @@ const index = () => {
 
   return (
     <nav class="pr-5 pt-5 pl-5 xl:mx-32">
-      <section class="font-bold text-2xl mb-8 ">
+      <section class="font-bold text-2xl mb-8 pl-2">
         <Link to='/'>&lt;max/&gt;</Link>
       </section>
       <section class='flex flex-row justify-between items-center h-8'>
