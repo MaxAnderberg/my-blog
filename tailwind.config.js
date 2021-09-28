@@ -15,6 +15,13 @@ module.exports = {
         mono: ['Roboto Mono', 'Sans'],
       }
     },
+    colors: {
+      cg: {
+        light: '#f5f2f0',
+        medium: '#f1ece9',
+        dark: '#d5d0cd',
+      }
+    }
   },
   variants: {
     extend: {},
