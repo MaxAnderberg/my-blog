@@ -7,7 +7,14 @@ module.exports = {
      square: 'square',
      roman: 'upper-roman',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ['Nunito', 'Sans'],
+        roboto: ['Roboto', 'Sans'],
+        monoton: ['Monoton', 'Sans'],
+        mono: ['Roboto Mono', 'Sans'],
+      }
+    },
   },
   variants: {
     extend: {},

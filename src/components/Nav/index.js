@@ -36,10 +36,10 @@ const index = () => {
 
   return (
     <nav class="pr-5 pt-5 pl-5 xl:mx-32">
-      <section class="font-bold text-2xl mb-8 pl-2">
+      <section class="font-monoton text-2xl mb-8 pl-2">
         <Link to='/'>&lt;max/&gt;</Link>
       </section>
-      <section class='flex flex-row justify-between items-center h-8'>
+      <section class='font-nunito flex flex-row justify-between items-center h-8'>
         <section class='flex flex-row uppercase'>
           <NavLink text='Home' destination='/' />
           <NavLink text='About' destination='/about' />
