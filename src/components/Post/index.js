@@ -18,10 +18,10 @@ const post = ({props}) => {
               whileHover={{
                 scale: 1.1,
                 originX:0,
-                boxShadow: "10px 10px 0 rgba(0, 0, 0, 0.2)",
+                boxShadow: "10px 10px 0 rgba(213, 208, 205, 1)",
                 transition: { type: 'spring', stiffness: 300, duration: 0.2},
               }}
-            class="inline-block bg-gray-200 rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 mt-3">
+            class="inline-block bg-cgw-medium rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 mt-3">
               Read more 👈
             </motion.button>
           </Link>
