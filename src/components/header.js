@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Nav from './Nav';
 
 const Header = () => (
-  <header class="bg-white shadow">
+  <header class="bg-cgw-medium shadow">
       <Nav />
   </header>
 )
