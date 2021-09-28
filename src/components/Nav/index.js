@@ -39,8 +39,8 @@ const index = () => {
       <section class="font-monoton text-2xl mb-8 pl-2">
         <Link to='/'>&lt;max/&gt;</Link>
       </section>
-      <section class='font-nunito flex flex-row justify-between items-center h-8'>
-        <section class='flex flex-row uppercase'>
+      <section class='font-nunito flex flex-row justify-between h-8 items-end'>
+        <section class='flex flex-row uppercase '>
           <NavLink text='Home' destination='/' />
           <NavLink text='About' destination='/about' />
         </section>
