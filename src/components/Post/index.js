@@ -21,7 +21,7 @@ const post = ({props}) => {
                 boxShadow: "10px 10px 0 rgba(213, 208, 205, 1)",
                 transition: { type: 'spring', stiffness: 300, duration: 0.2},
               }}
-            class="inline-block bg-cgw-medium rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 mt-3">
+            class="inline-block bg-cgw-medium rounded-lg px-3 py-1 text-sm font-semibold text-warmlight mr-2 mb-2 mt-3 text-shadow">
               Read more 👈
             </motion.button>
           </Link>
