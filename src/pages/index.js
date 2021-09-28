@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section class="grid md:grid-cols-3 grid-cols-1 md:justify-items-end pt-10 pb-10 border-b-2 mb-10">
+      <section class="grid md:grid-cols-3 grid-cols-1 md:justify-items-end pt-10 pb-10 border-cgw-medium border-b-2 mb-10">
         <section class="md:col-start-1 md:col-span-2 w-full">
           <span>
             <h1 class="text-2xl md:text-3xl text-gray-700 font-bold mb-1">Max Anderberg</h1>
