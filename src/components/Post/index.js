@@ -9,7 +9,7 @@ const post = ({props}) => {
       <img class="w-full h-44 md:h-56 rounded-lg" src={props.image.fluid.src}/>
       <section class="mb-5">
         <h3 class="font-bold text-xl mb-2">{props.title}</h3>
-        <p class='text-gray-400 text-sm mb-2'>{props.publishedDate}</p>
+        <p class='text-lightgray text-sm mb-2'>{props.publishedDate}</p>
         <p class="text-gray-700 text-base mb-4">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
         </p>
