@@ -14,12 +14,9 @@ const BlogPost = ({ data }) => {
   const H1 = ({ children }) => <h1 class='text-4xl font-bold'>{children}</h1>
   const H2 = ({ children }) => <h2 class='text-green-500'>{children}</h2>
   const H3 = ({ children }) => <h3 class='text-red-500'>{children}</h3>
-  const H4 = ({ children }) => <h4 class='text-blue-500'>{children}</h4>
   const Ul = ({ children }) => <ul >{children}</ul>
-  const Ol = ({ children }) => <ol class='list-roman'>{children}</ol>
   const BlockQuote = ({ children }) => <blockquote class='border-gray-300 rounded	border-l-8 bg-gray-100 p-3 mt-0 w-auto inline-block'>{children}</blockquote>
-  const Img = ({ children }) => <img src={children}></img>
-  const Li = ({ children }) => <li class='text-green-600'>{children}</li>
+
 
 const options = {
   renderMark: {
@@ -38,11 +35,7 @@ const options = {
     [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
     [BLOCKS.HEADING_2]: (node, children) => <H2>{children}</H2>,
     [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
-    [BLOCKS.LIST_ITEM]: (node, children) => {
-      console.log(node)
-      return (<li class='text-color-orange-600'>{node.content[0].content[0].value}</li>)
-    },
-    [BLOCKS.UL_LIST]: (node, children) => <Ul className='list-roman list-inside'>{children}</Ul>,
+
 
     // [BLOCKS.OL_LIST]: (node, children) => {
     //   // console.log(node)
