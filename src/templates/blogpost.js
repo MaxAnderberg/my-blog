@@ -9,14 +9,12 @@ import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 const BlogPost = ({ data }) => {
 
-
   const Text = ({ children }) => <p class='text-base my-5 leading-relaxed mt-0'>{children}</p>
   const H1 = ({ children }) => <h1 class='text-4xl font-bold'>{children}</h1>
   const H2 = ({ children }) => <h2 class='text-green-500'>{children}</h2>
   const H3 = ({ children }) => <h3 class='text-red-500'>{children}</h3>
   const Ul = ({ children }) => <ul >{children}</ul>
   const BlockQuote = ({ children }) => <blockquote class='border-gray-300 rounded	border-l-8 bg-gray-100 p-3 mt-0 w-auto inline-block'>{children}</blockquote>
-
 
 const options = {
   renderMark: {
@@ -41,7 +39,6 @@ const options = {
         <img src={node.data.target.fixed.src}/>
       );
     },
-
   },
 }
 
