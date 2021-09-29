@@ -5,6 +5,8 @@
   "extends": "airbnb",
   "rules": {
     "no-anonymous-exports-page-templates": "warn",
-    "limited-exports-page-templates": "warn"
+    "limited-exports-page-templates": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": 0
   }
  }
