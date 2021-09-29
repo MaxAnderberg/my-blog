@@ -35,16 +35,6 @@ const options = {
     [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
     [BLOCKS.HEADING_2]: (node, children) => <H2>{children}</H2>,
     [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
-
-
-    // [BLOCKS.OL_LIST]: (node, children) => {
-    //   // console.log(node)
-    //   return(
-    //     <Ol>
-    //       {children}
-    //     </Ol>
-    //   )
-    // },
     [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       return (
