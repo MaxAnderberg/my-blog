@@ -9,7 +9,7 @@ const index = ({ text, destination }) => {
     activeStyle={{color: '#231b15', fontWeight: 800}}
     to={destination}>
       <motion.p class='inline-block tracking-wider mb-0' 
-      whileHover={{translateY:-2}}
+      whileHover={{translateY:-2, color:'#231b15'}}
       transition={{ type:'spring', stiffness:500}}
       >
         {text}
