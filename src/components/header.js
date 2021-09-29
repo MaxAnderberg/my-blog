@@ -1,20 +1,20 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import Nav from './Nav';
 
 const Header = () => (
-  <header class="bg-cgw-medium shadow">
-      <Nav />
+  <header className="bg-cgw-medium shadow">
+    <Nav />
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: '',
+};
 
-export default Header
+export default Header;
