@@ -10,7 +10,7 @@ const post = ({props}) => {
       <section class="mb-5">
         <h3 class="font-bold text-xl mb-2">{props.title}</h3>
         <p class='text-gray-400 text-sm mb-2'>{props.publishedDate}</p>
-        <p class="text-gray-700 text-base">
+        <p class="text-gray-700 text-base mb-4">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
         </p>
           <Link to={`/blogpost/${props.slug}`}>
@@ -21,7 +21,7 @@ const post = ({props}) => {
                 boxShadow: "10px 10px 0 rgba(213, 208, 205, 1)",
                 transition: { type: 'spring', stiffness: 300, duration: 0.2},
               }}
-            class="inline-block bg-cgw-medium rounded-lg px-3 py-1 text-sm font-semibold text-warmlight mr-2 mb-2 mt-3 text-shadow">
+            class="inline-block bg-cgw-medium rounded-lg px-3 py-1 text-sm font-semibold text-warmlight mr-2 mb-2 text-shadow">
               Read more 👈
             </motion.button>
           </Link>
