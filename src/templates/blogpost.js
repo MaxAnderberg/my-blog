@@ -17,7 +17,7 @@ const BlogPost = ({ data }) => {
   const H4 = ({ children }) => <h4 class='text-blue-500'>{children}</h4>
   const Ul = ({ children }) => <ul >{children}</ul>
   const Ol = ({ children }) => <ol class='list-roman'>{children}</ol>
-  const BlockQuote = ({ children }) => <blockquote class='border-gray-300 rounded-r	border-l-8 bg-gray-100 p-3 w-auto inline-block'>{children}</blockquote>
+  const BlockQuote = ({ children }) => <blockquote class='border-gray-300 rounded	border-l-8 bg-gray-100 p-3 w-auto inline-block'>{children}</blockquote>
   const Img = ({ children }) => <img src={children}></img>
   const Li = ({ children }) => <li class='text-green-600'>{children}</li>
 
