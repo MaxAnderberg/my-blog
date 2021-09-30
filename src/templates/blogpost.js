@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { CopyBlock, atomOneDark } from 'react-code-blocks';
-import SEO from '../components/seo';
+import SEO from '../components/seo.js';
 import Layout from '../components/layout';
 
 const BlogPost = ({ data }) => {
@@ -11,7 +11,6 @@ const BlogPost = ({ data }) => {
   const H1 = ({ children }) => <h1 className="text-4xl font-bold">{children}</h1>;
   const H2 = ({ children }) => <h2 className="text-green-500">{children}</h2>;
   const H3 = ({ children }) => <h3 className="text-red-500">{children}</h3>;
-  const Ul = ({ children }) => <ul>{children}</ul>;
   const BlockQuote = ({ children }) => <blockquote className="border-gray-300 rounded	border-l-8 bg-gray-100 p-3 mt-0 w-auto inline-block">{children}</blockquote>;
 
   const options = {
@@ -34,9 +33,12 @@ const BlogPost = ({ data }) => {
       [BLOCKS.HEADING_2]: (node, children) => <H2>{children}</H2>,
       [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
       [BLOCKS.QUOTE]: (node, children) => <BlockQuote>{children}</BlockQuote>,
-      [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
-        <img src={node.data.target.fixed.src} />
-      ),
+      [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+        const imageSource = node.data.target.fixed.src;
+        return (
+          <img src={imageSource} />
+        );
+      },
     },
   };
 

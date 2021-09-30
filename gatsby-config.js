@@ -10,7 +10,7 @@ const gatsbyRequiredRules = path.join(
   "gatsby",
   "dist",
   "utils",
-  "eslint-rules"
+  "eslint-rules",
  );
 
 module.exports = {
