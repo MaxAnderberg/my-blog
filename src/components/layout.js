@@ -35,6 +35,9 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
       </div>
+      <div class='bg-cgw-medium shadow h-16 sticky bottom-0 '>
+        
+      </div>
     </>
   );
 };
