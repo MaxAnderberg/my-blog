@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -7,7 +7,6 @@ import Post from '../components/Post';
 
 const IndexPage = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges;
-  console.log(blogPosts);
   return (
     <Layout>
       <SEO title="Home" />
