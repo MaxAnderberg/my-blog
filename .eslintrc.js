@@ -4,7 +4,9 @@ module.exports = {
   },
   parser: "babel-eslint",
   rules: {
-    strict: 0
+    strict: 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": 0
   },
   extends: [
     "airbnb"
