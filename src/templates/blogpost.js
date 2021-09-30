@@ -36,7 +36,7 @@ const BlogPost = ({ data }) => {
       [BLOCKS.EMBEDDED_ASSET]: ({ node }) => {
         const imageSource = node.data.target.fixed.src;
         return (
-          <img src={imageSource} />
+          <img src={imageSource} alt="An illustration of what the blogpost is about" />
         );
       },
     },
