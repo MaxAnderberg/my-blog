@@ -14,7 +14,8 @@ const IndexPage = ({ data }) => {
         <section className="md:col-start-1 md:col-span-2 w-full">
           <span>
             <h1 className="text-2xl md:text-3xl text-gray-700 font-bold mb-1">Max Anderberg</h1>
-            <p>Welcome to my rudimentary blog. Mainly write about code stuff.</p>
+            <p class='mb-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </span>
         </section>
         <section className="md:col-start-3 col-span-1 row-start-1 mb-5">
