@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Gatsby } from '@styled-icons/simple-icons/Gatsby';
 import { Tailwindcss } from '@styled-icons/simple-icons/Tailwindcss';
 import { Contentful } from '@styled-icons/simple-icons/Contentful';
@@ -16,15 +15,15 @@ const about = () => (
     <main>
       <h1>Hey There (Wavy Hand)</h1>
       <p>
-        My name is Max Anderberg and I'm a fullstack JavaScript developer.
-        <br />
-        <br />
-        This blog is primarly for myself, like a diary. It gives me an oppertunity to maintain sideprojects which allows me to pursue and research new technologies,
+        My name is Max Anderberg and I&apos;m a fullstack JavaScript developer.
+        This blog is primarly for myself, like a diary.
+        It gives me an oppertunity to maintain sideprojects
+        which allows me to pursue and research new technologies,
         refining old concepts etc.
       </p>
 
       <section>
-        <h1>Blog's Tech Stack</h1>
+        <h1>Blog&apos;s Tech Stack</h1>
 
         <section className="flex justify-evenly items-start">
           <Contentful width="50" />
