@@ -43,31 +43,32 @@ const index = () => {
         <section class='flex flex-row uppercase '>
           <NavLink text='Home' destination='/' />
           <NavLink text='About' destination='/about' />
+          <NavLink text='Posts' destination='/posts' />
         </section>
         <section class='flex flex-row'>
-          <motion.a 
+          <motion.a
             href='https://github.com/MaxAnderberg'
             target='_blank'
-            class='mx-1 py-1 cursor-pointer' 
-            whileHover={{translateY:-2}}
-            transition={{ type:'spring', stiffness:500}}
+            class='mx-1 py-1 cursor-pointer'
+            whileHover={{ translateY: -2 }}
+            transition={{ type: 'spring', stiffness: 500 }}
           >
-            <GrayGithub width='25'/>
+            <GrayGithub width='25' />
           </motion.a>
-          <motion.a 
+          <motion.a
             href='https://linkedin.com/in/maxanderberg'
             target='_blank'
             class='mx-1 py-1 cursor-pointer'
-            whileHover={{translateY:-2}}
-            transition={{ type:'spring', stiffness:500}}
+            whileHover={{ translateY: -2 }}
+            transition={{ type: 'spring', stiffness: 500 }}
           >
-            <GrayLinkedin width='25' class=''/>
+            <GrayLinkedin width='25' class='' />
           </motion.a>
           <motion.a class='mx-1 py-1 cursor-pointer'
             href='https://MaxAnderberg.se'
             target='_blank'
-            whileHover={{translateY:-2}}
-            transition={{ type:'spring', stiffness:500}}
+            whileHover={{ translateY: -2 }}
+            transition={{ type: 'spring', stiffness: 500 }}
           >
             <GrayBriefcaseFill width='25' />
           </motion.a >
