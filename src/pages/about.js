@@ -1,19 +1,18 @@
 import React from 'react';
-import { Gatsby } from '@styled-icons/simple-icons/Gatsby';
-import { Tailwindcss } from '@styled-icons/simple-icons/Tailwindcss';
-import { Contentful } from '@styled-icons/simple-icons/Contentful';
-import { Styledcomponents } from '@styled-icons/simple-icons/Styledcomponents';
-import { Javascript } from '@styled-icons/boxicons-logos/Javascript';
-import { ReactLogo } from '@styled-icons/fa-brands/ReactLogo';
-import { Nodejs } from '@styled-icons/boxicons-logos/Nodejs';
 import Seo from '../components/seo';
 import Layout from '../components/layout';
+import SpinningSun from '../components/Animated/SpinningSun/SpinningSun';
+import SpinningMoon from '../components/Animated/SpinningMoon/SpinningMoon';
 
 const about = () => (
   <Layout>
     <Seo title="About" />
     <main>
-      <h1>Hey There (Wavy Hand)</h1>
+      <h1>
+        Hey There
+        <SpinningSun className="" />
+        <SpinningMoon className="" />
+      </h1>
       <p>
         My name is Max Anderberg and I&apos;m a fullstack JavaScript developer.
         This blog is primarly for myself, like a diary.
@@ -21,28 +20,24 @@ const about = () => (
         which allows me to pursue and research new technologies,
         refining old concepts etc.
       </p>
+      <p>
+        There are some great blogging options out there. However,
+        I wanted to build my own blog so I can tailor it to my own needs.
+        That&apos;s why I decided to build my own blog using Gatsby and Contentful as my CMS.
+        The initial state of this blog is &apos;simple&apos; but I believe in the power
+        of just creating something, and then let it evolve organically as I need it.
+        Rather than spending days on thinking about how to build, and design this blog.
+        <br />
+        Two main goals
+        <ul className="list-square">
+          <li>Have fun</li>
+          <li>Create a digital archive for myself</li>
+        </ul>
+      </p>
+      <p>Also you can check out my portfolio over at maxanderberg.se</p>
+      <p>If you interested in how this blog is built you can check out </p>
 
-      <section>
-        <h1>Blog&apos;s Tech Stack</h1>
-
-        <section className="flex justify-evenly items-start">
-          <Contentful width="50" />
-          <Tailwindcss width="50" />
-          <Gatsby width="50" />
-          <Styledcomponents width="50" />
-          <Javascript width="50" />
-          <ReactLogo width="50" />
-          <Nodejs width="50" />
-        </section>
-        <p>Interested in looking at the source code? Check it out here on GitHub</p>
-      </section>
-
-      <section>
-        <h1>Other Work</h1>
-        <p>Interested in some of my other works? Check out my portfolio</p>
-      </section>
     </main>
-
   </Layout>
 );
 

@@ -3,17 +3,17 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     listStyleType: {
-     decimal: 'decimal',
-     square: 'square',
-     roman: 'upper-roman',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
     },
     extend: {
       fontFamily: {
         nunito: ['Nunito', 'Sans'],
-        roboto: ['Roboto', 'Sans'], 
+        roboto: ['Roboto', 'Sans'],
         monoton: ['Monoton', 'Sans'],
         mono: ['Roboto Mono', 'Sans'],
-      }
+      },
     },
     textColor: {
       'warmlight': '#564b43',
@@ -37,7 +37,7 @@ module.exports = {
         light: '#222b2f',
         dark: '#19272f',
       },
-    }
+    },
   },
   variants: {
     extend: {},

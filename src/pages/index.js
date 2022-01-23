@@ -10,12 +10,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="grid md:grid-cols-3 grid-cols-1 md:justify-items-end pt-10 pb-10 border-cgw-medium border-b-2 mb-10">
+      <section className="grid md:grid-cols-3 grid-cols-1 md:justify-items-end pb-10 border-cgw-medium border-b-2 mb-10">
         <section className="md:col-start-1 md:col-span-2 w-full">
           <span>
-            <h1 className="text-2xl md:text-3xl text-gray-700 font-bold mb-1">Max Anderberg</h1>
-            <p class='mb-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h1 className="text-2xl md:text-3xl text-gray-700 font-bold mb-1">Hi 👋 I&apos;m, Max</h1>
+            <p className="mb-0">I&apos;m a fullstack developer.</p>
+            <p>This blog is primarly for myself, like a diary documenting my various escapades.</p>
           </span>
         </section>
         <section className="md:col-start-3 col-span-1 row-start-1 mb-5">
