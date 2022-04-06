@@ -14,7 +14,7 @@ const index = () => {
     transition: all 0.5s;
     &:hover {
       color:#231b15;
-    }ß
+    }
   `;
   const GrayLinkedin = styled(Linkedin)`
     color: #918d8a;
