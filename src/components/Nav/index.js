@@ -39,8 +39,8 @@ const index = () => {
       <section className="font-nunito flex flex-row justify-between h-8 items-end">
         <section className="flex flex-row uppercase ">
           <NavLink text="Home" destination="/" />
+          <NavLink text="Real Talk" destination="/realTalk" />
           <NavLink text="About" destination="/about" />
-          <NavLink text="Posts" destination="/posts" />
         </section>
         <section className="flex flex-row">
           <motion.a
