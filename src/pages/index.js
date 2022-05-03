@@ -3,10 +3,35 @@ import { graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Post from '../components/Post';
+// import Post from '../components/Post';
+
+export const query = graphql`
+    query SITE_INDEX_QUERY {
+        site {
+            siteMetadata {
+                title
+                description
+            }
+        }
+        allMdx(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { published: { eq: true } } }
+        ) {
+            nodes {
+                id
+                excerpt(pruneLength: 250)
+                frontmatter {
+                    title
+                    date
+                }
+            }
+        }
+    }
+`;
 
 const IndexPage = ({ data }) => {
-  const blogPosts = data.allContentfulBlogPost.edges;
+  // const blogPosts = data.allContentfulBlogPost.edges;
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -22,35 +47,18 @@ const IndexPage = ({ data }) => {
           <StaticImage class="w-3/12 md:w-32" src="../images/profile_image.png" alt="The man himself!" />
         </section>
       </section>
-      <div className="grid gap-20 md:grid-cols-2 grid-cols-1">
-        {blogPosts.map(({ node }) => (
-          <Post key={node.id} props={node} />
-        ))}
-        <span className="mgBtm__24" />
-      </div>
+      <h1>{data.site.siteMetadata.title}</h1>
+      <p>{data.site.siteMetadata.description}</p>
+        <div>
+            {data.allMdx.nodes.map(({ excerpt, frontmatter }) => (
+                <>
+                    <h1>{frontmatter.title}</h1>
+                    <p>{frontmatter.date}</p>
+                    <p>{excerpt}</p>
+                </>
+            ))}
+        </div>
     </Layout>
   );
 };
 export default IndexPage;
-export const query = graphql`
-  query BlogPostsPageQuery {
-    allContentfulBlogPost {
-    edges {
-      node {
-        body {
-          raw
-        }
-        id
-        slug
-        title
-        publishedDate(formatString: "YYYY-MM-DD")
-        image {
-          fluid {
-            src
-          }
-        }
-      }
-    }
-  }
-}
-`;
