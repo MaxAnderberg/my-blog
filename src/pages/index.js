@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,14 +9,14 @@ export const query = graphql`
     query SITE_INDEX_QUERY {
         site {
             siteMetadata {
-                title
-                description
+               title
+               description
             }
         }
         allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { published: { eq: true } } }
-        ) {
+            sort: {fields: [frontmatter___date], order: DESC},
+            filter: {frontmatter: {published: {eq: true}}}
+        ){
             nodes {
                 id
                 excerpt(pruneLength: 250)
@@ -24,15 +24,18 @@ export const query = graphql`
                     title
                     date
                 }
+                fields {
+                    slug
+                }
             }
         }
     }
 `;
 
-const IndexPage = ({ data }) => {
-  // const blogPosts = data.allContentfulBlogPost.edges;
+const IndexPage = ({ data }) =>
+// const blogPosts = data.allContentfulBlogPost.edges;
 
-  return (
+  (
     <Layout>
       <SEO title="Home" />
       <section className="grid md:grid-cols-3 grid-cols-1 md:justify-items-end pb-10 border-cgw-medium border-b-2 mb-10">
@@ -49,16 +52,17 @@ const IndexPage = ({ data }) => {
       </section>
       <h1>{data.site.siteMetadata.title}</h1>
       <p>{data.site.siteMetadata.description}</p>
-        <div>
-            {data.allMdx.nodes.map(({ excerpt, frontmatter }) => (
-                <>
-                    <h1>{frontmatter.title}</h1>
-                    <p>{frontmatter.date}</p>
-                    <p>{excerpt}</p>
-                </>
-            ))}
-        </div>
+      <div>
+        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
+          <div>
+            <Link to={fields.slug}>
+              <h1>{frontmatter.title}</h1>
+            </Link>
+            <p>{frontmatter.date}</p>
+            <p>{excerpt}</p>
+          </div>
+        ))}
+      </div>
     </Layout>
   );
-};
 export default IndexPage;
