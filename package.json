@@ -51,7 +51,9 @@
     "prettier": "2.3.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "blog",
+    "markdown"
   ],
   "license": "0BSD",
   "scripts": {
