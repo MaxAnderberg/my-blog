@@ -39,14 +39,15 @@ const BlogPost = ({ data }) => {
         {/*    <p className="text-gray-600 text-sm font-semibold">{publishedDate}</p>*/}
         {/*  </section>*/}
         {/*</section>*/}
-        <section className="flex ">
-          <h1>{frontmatter.title}</h1>
+        <section className="flex flex-col justify-center items-left">
+          {/* @TODO: Add blog post image here */}
+          <h1 className="font-bold text-4xl py-5">{frontmatter.title}</h1>
           <p>{frontmatter.date}</p>
-          <section className="font-bold text-lg">
+          <section className="flex flex-col border-t border-b border-cgw-medium py-5 mb-4">
             <MDXRenderer>{body}</MDXRenderer>
           </section>
         </section>
-        <p className="body-text">{body.body}</p>
+        {/* @TODO: I can probably remove this <p className="body-text">{body.body}</p> */}
         <NavLink text="Back to Home" destination="/" />
         <NavLink text="View more posts" destination="/blogposts" />
         <Link to="/">
