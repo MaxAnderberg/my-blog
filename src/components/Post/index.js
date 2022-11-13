@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const post = ({ props }) => (
   <div className="max-w-sm px-1 rounded overflow-hidden">
-    <img className="w-full h-44 md:h-56 rounded-lg" src={props.frontmatter.featuredImage} />
+    {/* <img className="w-full h-44 md:h-56 rounded-lg" src={props.frontmatter.featuredImage} /> */}
     <section className="mb-5">
       <h3 className="font-bold text-xl mb-2">{props.title}</h3>
       <p className="text-lightgray text-sm mb-2">{props.publishedDate}</p>
